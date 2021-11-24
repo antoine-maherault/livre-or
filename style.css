@@ -1,0 +1,245 @@
+@font-face {
+    font-family: 'Estonia';
+    src: url('Estonia-Regular.ttf') format('truetype'); 
+  }  
+
+
+body {
+    background-color: rgb(150, 179, 133);
+    font-family : Estonia;
+    font-size : 25px;
+} 
+
+/*______________ Header ______________*/
+
+header {
+    display : flex;
+    flex-direction: row;
+    justify-content:  flex-end;
+    align-items: flex-end;
+    gap : 20px;
+    padding : 30px;
+}
+
+.deco {
+    border:none;
+    font-family : monospace;
+    font-size: 15px;
+    background-color : none;
+    padding-bottom : 5px; 
+    transition-timing-function: cubic-bezier(0.42, 0, 1, 1);
+    transition-duration: 100ms;
+    padding-bottom:10px;
+    padding-top:10px;
+}
+
+.deco:hover {
+    background-color : rgb(202, 202, 202);
+}
+.decoform {
+    border:none;
+    font-family : monospace;
+    font-size: 15px;
+}
+
+header a {
+    font-family: monospace;
+    text-decoration: none;
+    font-size : 17px;
+    color:white;
+    transition-timing-function: ease-in-out;
+    transition-timing-function: cubic-bezier(0.42, 0, 1, 1);
+    transition-duration: 300ms;
+    padding-bottom : 10px;
+}
+
+a:hover {
+    color:black;
+}
+
+a:visited {
+    color:white;
+}
+
+a:visited:hover {
+    color:black;
+}
+
+/*______________ Index ______________*/
+
+.title{
+    display : flex;
+    flex-direction: column;
+    justify-content:  center;
+    align-items:center;
+    height: 400px;
+    padding-bottom: 200px;
+    font-size : 70px;   
+
+}
+
+.square {
+    z-index:2;
+    margin-left : 1%;
+    animation: blinker 2s linear infinite;
+    bottom : 0;
+    position: fixed;
+    margin-bottom :20px; 
+}
+
+/*______________ Inscription ______________*/
+
+.tsignin{
+    display : flex;
+    flex-direction: column;
+    justify-content:  center;
+    align-items:center;
+    height: 200px;
+    font-size : 70px;   
+
+}
+
+.myform {
+    display : flex;
+    flex-direction: column;
+    justify-content:  center;
+    align-items:center;
+    background-color : rgb(173, 174, 252);
+    width : 500px;
+    padding : 10px;
+    font-size : 25px;
+}
+
+/*______________ User profile page ______________*/
+
+.container{
+    display : flex;
+    flex-direction: row;
+    justify-content:  center;
+    align-items:center;
+    background-color : rgb(173, 174, 252);
+
+}
+
+.myform2 {
+    display : flex;
+    flex-direction: column;
+    justify-content:  center;
+    align-items:center;
+    width : 400px;
+    padding : 10px;
+    height : 200px;
+}
+
+#update{
+    text-align : center;
+    color : white;  
+    font-weight : bold;
+    font-size : 30px;
+}
+
+/*______________ Admin users page ______________*/
+
+.admin{
+    display : flex;
+    flex-direction: column;
+    justify-content:  center;
+    align-items:center;
+    background-color: bisque;
+    font-family : monospace;
+}
+
+
+/*______________ Livre d'or ______________*/
+
+
+.comments{
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+    gap : 10px;
+    background-color : rgb(142, 144, 252);
+    margin-left : 200px;
+    margin-right : 200px;
+
+}
+.comment{
+    background-color : rgb(142, 144, 252);
+    width : 210px;
+    display : flex;
+    flex-direction : column;
+    align-items : left;
+    padding : 10px;
+}
+
+.addComment{
+    background-color : rgb(112, 114, 248);
+    width : 200px;
+    height : 35px;
+    text-align : center;
+    justify-content: center;
+    align-items : center;
+}
+
+.addComment a{
+    color : black;
+}
+
+#newcomment{
+    display : flex;
+    flex-direction : column;
+    text-align : center;
+    justify-content: center;
+    align-items : center;
+    padding-top : 10px;
+}
+
+article a {
+    text-decoration : none;
+    color: white;
+}
+
+footer a {
+    text-decoration : none;
+    color: white;
+    font-size : 30px;
+}
+
+.com{
+    color : white;
+}
+
+/*______________ Commentaire ______________*/
+
+.commentsA{
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+    gap : 10px;
+}
+.commentA{
+    background-color : rgb(142, 144, 252);
+    width : 600px;
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+    padding : 10px;
+}
+
+.commentA input {
+    height : 100px;
+    background-color: rgb(221, 221, 221);
+    text-align :center;
+    font-family : arial;
+    color : rgb(63, 62, 62);
+}
+
+.addComment {
+    font-family : Estonia;
+    font-size : 25px;
+	border: none;
+}
+
+.addComment:hover{
+    background-color : rgb(142, 144, 252);
+}
