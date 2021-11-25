@@ -9,6 +9,7 @@
 
  <body>
  <header>
+ <a href="index.php"> Home </a> 
  <?php include "header.php";?> 
 </header>
 <main>
