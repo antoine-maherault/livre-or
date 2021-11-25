@@ -7,6 +7,6 @@
 
    // Create connection
 
-   $conn = new mysqli($servername, $username, $password, 'livreor');
+   $conn = new mysqli($servername, $username, $password, 'antoine_maherault-livre-or');
 ?>
 
