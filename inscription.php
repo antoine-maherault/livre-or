@@ -9,11 +9,8 @@
 
  <body>
  <header>
-    <a href="index.php"> Home </a>
-    <a href="inscription.php"> Inscription </a>
-    <a href="connexion.php"> Connexion </a>
+ <?php include "header.php";?> 
 </header>
-
 <main>
  <h1 class="tsignin"><i>Fleurs d'autonomne</i></h1>
 
@@ -33,22 +30,15 @@
 
 // Variables form // 
 
-$login=$_POST["login"];
-$prenom=$_POST["fname"];
-$nom=$_POST["lname"];
-$password1=$_POST["password1"];
-$password2=$_POST["password2"];
+$login=trim($_POST["login"]);
+$prenom=trim($_POST["fname"]);
+$nom=trim($_POST["lname"]);
+$password1=trim($_POST["password1"]);
+$password2=trim($_POST["password2"]);
 
+//_________________connect to DB_________________//
 
-//_________________connect to SQL_________________//
-
-$servername = "localhost";
-$username = "root";
-$password = "root";
-
-// Create connection
-
-$conn = new mysqli($servername, $username, $password, 'livreor');
+include "db_link.php"; 
 
 //_________________select DATA_________________//
 
@@ -58,7 +48,7 @@ $sql = "SELECT * FROM utilisateurs" ;
 $query = $conn->query($sql);
 $users = $query->fetch_all();
 
-//_________________interact with DATA_________________//
+//_________________add new USER_________________//
 
 if($_POST["submit"]=="Envoyer"){
     if ($login == NULL && $password1 == NULL && $password2 == NULL){}
@@ -94,7 +84,7 @@ if($_POST["submit"]=="Envoyer"){
         }
         else{
             foreach($users as $user){   // check if Login already exists
-                if ( isset($_POST["login"]) && $_POST["login"] == $user[1] ){
+                if ( isset($_POST["login"]) && $login == $user[1] ){
                     echo "<p id='update'>login alreay taken</p>";
                     $taken = 1;
                 }
@@ -108,10 +98,12 @@ if($_POST["submit"]=="Envoyer"){
         }
     }
 }   
-
 ?>
 
 <footer>
+<div class="square">
+    <a href="https://github.com/antoine-maherault/livre-or"> Github </a> 
+  </div>   
 </footer>
 
  </body>

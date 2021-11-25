@@ -6,27 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
  </head>
-
  <body>
 
  <header>
    <a href="index.php"> Home </a> 
    <?php include "header.php";?> 
 </header>
+
 <main>
 <h1 class="tsignin"><i>Livre d'or</i></h1> 
-
 <?php
 
-//_________________connect to SQL_________________//
+//_________________connect to DB_________________//
 
-$servername = "localhost";
-$username = "root";
-$password = "root";
-
-// Create connection
-
-$conn = new mysqli($servername, $username, $password, 'livreor');
+include "db_link.php"; 
 
 //_________________select DATA_________________//
 
@@ -60,16 +53,16 @@ foreach(array_reverse($comments) as $comment){
   echo "</div>";
   echo "</div></article>";
 } 
+//_________________add new COMMENT_________________//
 
-?>
-
-
+if(isset($_SESSION['connected'])){ ?>
 <div id=newcomment>
   <article class ="addComment"><a href="commentaire.php">Ajouter un commentaire<a></article>
 </div>
+<?php  }?>
+
 </main>
-<footer>
-  
+<footer>  
 </footer>
 </body>
 </html>

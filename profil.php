@@ -7,7 +7,13 @@
   <link rel="stylesheet" href="style.css">
  </head>
 
- <body>
+<body>
+<main>
+<?php 
+// DISPLAY PAGE IF CONNECTED
+ session_start();
+ if(isset($_SESSION['connected'])){
+ ?>
 
 <header>
 
@@ -16,15 +22,9 @@
 
 include "header.php";
 
-//_________________connect to SQL_________________//
+//_________________connect to DB_________________//
 
-$servername = "localhost";
-$username = "root";
-$password = "root";
-
-// Create connection
-
-$conn = new mysqli($servername, $username, $password, 'livreor');
+include "db_link.php"; 
 
 //_________________select DATA_________________//
 
@@ -70,15 +70,15 @@ $password=$user[0][2];
 
  <?php 
 
-//_________________Change Details// 
+//_________________Change USER Details_________________// 
 
 if(isset($_SESSION["connected"])){
 if($_POST["submit1"]=="Envoyer"){ //update fname + lname + login
     if ($login == NULL && $prenom == NULL && $nom == NULL){}
     else {
-        $login=$_POST["login"];
-        $prenom=$_POST["fname"];
-        $nom=$_POST["lname"];
+        $login=trim($_POST["login"]);
+        $prenom=trim($_POST["fname"]);
+        $nom=trim($_POST["lname"]);
         if($login == NULL||$prenom == NULL||$nom == NULL){
             if($login == NULL){
             $_SESSION['update'] = 0;
@@ -160,9 +160,19 @@ if(isset($_SESSION['update']) && $_SESSION['update'] <= 2 ){ //feedback
 }
 
 ?>
-
+</main>
 <footer>
+<div class="square">
+    <a href="https://github.com/antoine-maherault/livre-or"> Github </a> 
+  </div>   
 </footer>
+
+<?php 
+}
+else{
+  echo "<h1 class='title'>Acces denied</h1>";
+}
+?>
 
  </body>
  

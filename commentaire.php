@@ -9,6 +9,12 @@
 
  <body>
 
+ <?php 
+ // DISPLAY PAGE IF CONNECTED
+ session_start();
+ if(isset($_SESSION['connected'])){
+ ?>
+
  <header>
    <a href="index.php"> Home </a> 
    <?php include "header.php";?> 
@@ -26,15 +32,9 @@
 </div>
 
 <?php
-//_________________connect to SQL_________________//
+//_________________connect to DB_________________//
 
-$servername = "localhost";
-$username = "root";
-$password = "root";
-
-// Create connection
-
-$conn = new mysqli($servername, $username, $password, 'livreor');
+include "db_link.php"; 
 
 //_________________ user ID _________________//
 
@@ -57,12 +57,16 @@ if(isset($_GET["comment"])){
   $query = $conn->query($sql);
   header("Location:livre-or.php");
 }
-
 ?>
 
 </main>
 <footer>
-  
+<div class="square">
+    <a href="https://github.com/antoine-maherault/livre-or"> Github </a> 
+  </div>   
 </footer>
+
+<?php } else{ echo "<h1 class='title'>Acces denied</h1>"; } ?>
+
 </body>
 </html>

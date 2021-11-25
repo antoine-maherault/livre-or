@@ -3,7 +3,6 @@
     src: url('Estonia-Regular.ttf') format('truetype'); 
   }  
 
-
 body {
     background-color: rgb(150, 179, 133);
     font-family : Estonia;
@@ -138,20 +137,7 @@ a:visited:hover {
     font-size : 30px;
 }
 
-/*______________ Admin users page ______________*/
-
-.admin{
-    display : flex;
-    flex-direction: column;
-    justify-content:  center;
-    align-items:center;
-    background-color: bisque;
-    font-family : monospace;
-}
-
-
 /*______________ Livre d'or ______________*/
-
 
 .comments{
     display : flex;
@@ -161,11 +147,13 @@ a:visited:hover {
     background-color : rgb(142, 144, 252);
     margin-left : 200px;
     margin-right : 200px;
-
+    font-family : monospace;
+    font-size: 12px;
 }
+
 .comment{
     background-color : rgb(142, 144, 252);
-    width : 210px;
+    width : 230px;
     display : flex;
     flex-direction : column;
     align-items : left;
@@ -207,6 +195,9 @@ footer a {
 
 .com{
     color : white;
+    font-family : Estonia;
+    font-size : 25px;
+
 }
 
 /*______________ Commentaire ______________*/
@@ -235,9 +226,13 @@ footer a {
 }
 
 .addComment {
-    font-family : Estonia;
-    font-size : 25px;
+    font-family : monospace;
+    font-size : 13px;
 	border: none;
+    display : flex;
+    flex-direction : column;
+    justify-content: center;
+    padding : 2px;
 }
 
 .addComment:hover{
