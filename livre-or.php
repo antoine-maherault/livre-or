@@ -57,7 +57,7 @@ foreach(array_reverse($comments) as $comment){
 
 if(isset($_SESSION['connected'])){ ?>
 <div id=newcomment>
-<input type ="submit"class ="addComment" value= "Ajouter un commentaire"></input>
+<input href="commentaire.php" type ="submit"class ="addComment" value= "Ajouter un commentaire"></input>
 </div>
 <?php  }?>
 
