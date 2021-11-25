@@ -61,7 +61,7 @@ if(isset($_GET["comment"])){
   $query = $conn->query($sql);
   header("Location:livre-or.php");
 }
-}
+} 
 
 ?>
 
