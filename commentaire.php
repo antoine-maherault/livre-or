@@ -52,10 +52,13 @@ $date = date('Y-m-d H:i:s');
 
 //_________________save COMMENT_________________//
 
-if(isset($_GET["comment"])){
+if(isset($_GET["comment"])&&$_GET["comment"]!=NULL){
   $sql = "INSERT INTO `commentaires` (`commentaire`, `id_utilisateur`, `date`) VALUES('$comment', '$id_user', '$date')";
   $query = $conn->query($sql);
   header("Location:livre-or.php");
+}
+else{
+  echo "<p id='update'>Veuillez entrer un commentaire.</p>";
 }
 ?>
 
