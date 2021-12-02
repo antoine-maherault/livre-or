@@ -160,7 +160,6 @@ if(isset($_SESSION['update']) && $_SESSION['update'] <= 2 ){ //feedback
 }
 
 ?>
-</main>
 <footer>
 <div class="square">
     <a href="https://github.com/antoine-maherault/livre-or"> Github </a> 
